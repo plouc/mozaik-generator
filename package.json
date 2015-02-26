@@ -1,9 +1,13 @@
 {
-    "name": "generator-mozaik",
-    "version": "0.1.0",
-    "description": "Helps roll your own mozaik extension",
-    "keywords": ["yeoman-generator"],
-    "dependencies": {
-        "yeoman-generator": "^0.17.3"
-    }
+  "name": "generator-mozaik",
+  "version": "0.1.0",
+  "description": "Helps roll your own mozaik extension",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "npm-name": "^1.0.4",
+    "yeoman-generator": "^0.18.9"
+  }
 }
