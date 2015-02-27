@@ -68,10 +68,12 @@ module.exports = generators.Base.extend({
     writing: {
         projectfiles: function () {
             this.template('_package.json', 'package.json');
-            //this.template('editorconfig', '.editorconfig');
-            //this.template('jshintrc', '.jshintrc');
-            //this.template('_travis.yml', '.travis.yml');
+            this.template('_travis.yml', '.travis.yml');
+            this.template('_gitignore', '.gitignore');
+            this.template('_npmignore', '.npmignore');
             this.template('README.md');
-        },
+
+            this.copy('preprocessor.js', 'src/preprocessor.js');
+        }
     }
 });
