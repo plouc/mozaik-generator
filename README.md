@@ -4,4 +4,5 @@
 
 ```bash
 yo mozaik:ext
+npm install
 ```

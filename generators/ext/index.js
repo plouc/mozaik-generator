@@ -74,6 +74,8 @@ module.exports = generators.Base.extend({
             this.template('README.md');
 
             this.copy('preprocessor.js', 'src/preprocessor.js');
+
+            this.copy('_index.styl', 'styl/index.styl');
         }
     }
 });
