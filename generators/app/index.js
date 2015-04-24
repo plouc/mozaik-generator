@@ -104,6 +104,7 @@ module.exports = generators.Base.extend({
                     { name: 'google calendar',  value: 'calendar' },
                     { name: 'google sheets',    value: 'sheets' },
                     'heroku',
+                    'image',
                     'jenkins',
                     'sensu',
                     'time',
