@@ -3,6 +3,24 @@ var chalk      = require('chalk');
 var npmName    = require('npm-name');
 var _          = require('lodash');
 
+// Available extensions
+var extensions = [
+    { id: 'none'                                               },
+    { id: 'aws',       name: 'AWS',              client: true  },
+    { id: 'github',    name: 'github',           client: true  },
+    { id: 'analytics', name: 'google analytics', client: true  },
+    { id: 'calendar',  name: 'google calendar',  client: true  },
+    { id: 'sheets',    name: 'google sheets',    client: true  },
+    { id: 'heroku',    name: 'heroku',           client: true  },
+    { id: 'image',     name: 'image',            client: true  },
+    { id: 'jenkins',   name: 'jenkins',          client: true  },
+    { id: 'sensu',     name: 'sensu',            client: true  },
+    { id: 'time',      name: 'time',             client: false },
+    { id: 'travis',    name: 'travis',           client: true  },
+    { id: 'twitter',   name: 'twitter',          client: true  },
+    { id: 'weather',   name: 'weather',          client: true  }
+];
+
 module.exports = generators.Base.extend({
     init: function () {
         this.extensions = [];
@@ -92,29 +110,24 @@ module.exports = generators.Base.extend({
         askForExtension: function () {
             var done = this.async();
 
+            var choices = _.map(extensions, function (extension) {
+                return {
+                    name:  extension.name,
+                    value: extension.id
+                };
+            });
+
             this.prompt({
                 type:    'list',
                 name:    'extension',
                 message: 'Select an extension to install or select `none` to continue',
-                choices: [
-                    'none',
-                    'aws',
-                    'github',
-                    { name: 'google analytics', value: 'analytics' },
-                    { name: 'google calendar',  value: 'calendar' },
-                    { name: 'google sheets',    value: 'sheets' },
-                    'heroku',
-                    'image',
-                    'jenkins',
-                    'sensu',
-                    'time',
-                    'travis',
-                    'twitter',
-                    'weather'
-                ]
+                choices: choices
             }, function (answers) {
                 if (answers.extension !== 'none') {
-                    this.extensions.push(answers.extension);
+                    var extension = _.find(extensions, { id: answers.extension });
+                    if (typeof extension !== 'undefined') {
+                        this.extensions.push(extension);
+                    }
 
                     return this.prompting.askForExtension.call(this);
                 }

@@ -12,7 +12,7 @@
         "gulp-uglify": "^1.1.0",
         "lodash": "^3.2.0",
         "mozaik": "*",
-<% extensions.forEach(function (extension) { %>        "mozaik-ext-<%= extension %>": "*",
+<% extensions.forEach(function (extension) { %>        "mozaik-ext-<%= extension.id %>": "*",
 <% }) %>        "react": "^0.12.2",
         "reactify": "^1.0.0",
         "reflux": "^0.2.5",
