@@ -1,7 +1,7 @@
 {
   "name": "generator-mozaik",
-  "version": "0.1.0",
-  "description": "Helps roll your own mozaik extension",
+  "version": "1.0.0",
+  "description": "Helps roll your own mozaik dashboard",
   "keywords": [
     "yeoman-generator"
   ],

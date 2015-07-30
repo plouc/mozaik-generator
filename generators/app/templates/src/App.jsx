@@ -1,10 +1,13 @@
-var React         = require('react');
-var mozaik        = require('mozaik/browser');
-var Mozaik        = mozaik.Component.Mozaik;
-var ConfigActions = mozaik.Actions.Config;
+import React         from 'react';
+import Mozaik        from 'mozaik/browser';
 
-<% extensions.forEach(function (extension) { %>mozaik.addBatch('<%= extension.id %>', require('mozaik-ext-<%= extension.id %>'));
+
+const MozaikComponent = Mozaik.Component.Mozaik;
+const ConfigActions   = Mozaik.Actions.Config;
+
+
+<% extensions.forEach(function (extension) { %>Mozaik.Registry.addExtension('<%= extension.id %>', require('mozaik-ext-<%= extension.id %>'));
 <% }) %>
-React.render(<Mozaik />, document.getElementById('mozaik'));
+React.render(<MozaikComponent />, document.getElementById('mozaik'));
 
 ConfigActions.loadConfig();

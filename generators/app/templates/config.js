@@ -20,6 +20,7 @@ var config = {
         {
             columns: 4, rows: 3,
             widgets: [
+                // Insert widgets for your first dashboard here
             ]
         }
     ]
