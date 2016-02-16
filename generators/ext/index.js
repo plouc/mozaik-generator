@@ -19,7 +19,6 @@ module.exports = generators.Base.extend({
         //this.npmInstall(['lodash'], { 'saveDev': true });
         //this.npmInstall(['mozaik'], { 'saveDev': true });
         //this.npmInstall(['react'], { 'saveDev': true });
-        //this.npmInstall(['react-tools'], { 'saveDev': true });
         //this.npmInstall(['reflux'], { 'saveDev': true });
     },
 

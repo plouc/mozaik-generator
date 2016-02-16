@@ -22,12 +22,11 @@ var extensions = [
 ];
 
 module.exports = generators.Base.extend({
-    init: function () {
+    initializing: function () {
         this.extensions = [];
     },
 
     initPackageJson: function () {
-
     },
 
     installNpmDependencies: function () {
