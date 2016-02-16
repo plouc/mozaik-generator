@@ -1,6 +1,6 @@
 {
   "name": "generator-mozaik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helps roll your own mozaik dashboard",
   "keywords": [
     "yeoman-generator"
